@@ -51,7 +51,8 @@ crosshairs-change-hooks %{
         fi
         # set hook
         if [ "$kak_opt_highlight_current_column" = true ] || [ "$kak_opt_highlight_current_line" = true ]; then
-            printf "%s\n" "hook global -group crosshairs RawKey .+ crosshairs-update"
+            printf "%s\n" "hook global -group crosshairs NormalKey .+ crosshairs-update"
+            printf "%s\n" "hook global -group crosshairs ModeChange .+ crosshairs-update"
         else
             printf "%s\n" "remove-hooks global crosshairs"
         fi
